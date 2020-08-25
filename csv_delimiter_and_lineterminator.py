@@ -1,0 +1,11 @@
+import csv
+csvFile = open('example1.tsv', 'w', newline='')
+csvWriter = csv.writer(csvFile, delimiter='\t', lineterminator = '\n\n')
+csvWriter.writerow(['apples', 'oranges', 'grapes'])
+csvWriter.writerow(['eggs', 'bacon', 'ham'])
+csvWriter.writerow(['sapm', 'spam', 'spam', 'spam'])
+csvFile.close()
+csvFile2 = open('example1.tsv')
+csvReader = csv.reader(csvFile2)
+csvData = list(csvReader)
+print(csvData)
